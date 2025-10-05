@@ -5,7 +5,15 @@ func routes(_ app: Application) throws {
 		"It works!"
 	}
 
-	app.get("hello") { _ async -> String in
-		"Hello, world!"
+	app.get("hello", ":name") { req -> String in
+		let name = req.parameters.get("name")!
+		return "Hello, \(name)!"
+	}
+
+	app.get("number", ":x") { req -> String in
+		guard let int = req.parameters.get("x", as: Int.self) else {
+			throw Abort(.badRequest)
+		}
+		return "\(int) is a great number"
 	}
 }
