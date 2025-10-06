@@ -1,4 +1,4 @@
-// swift-tools-version:6.0
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
@@ -7,10 +7,8 @@ let package = Package(
 		.macOS(.v12),
 	],
 	dependencies: [
-		// 💧 A server-side Swift web framework.
-		.package(url: "https://github.com/vapor/vapor.git", from: "4.115.0"),
-		// 🔵 Non-blocking, event-driven networking for Swift. Used for custom executors
-		.package(url: "https://github.com/apple/swift-nio.git", from: "2.65.0"),
+		.package(url: "https://github.com/vapor/vapor.git", .exact("3.3.3")),
+		.package(url: "https://github.com/apple/swift-nio.git", .upToNextMajor(from: "2.32.0")),
 	],
 	targets: [
 		.executableTarget(
