@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
 	name: "hello",
 	platforms: [
-		.macOS(.v15),
+		.macOS(.v12),
 	],
 	dependencies: [
 		// 💧 A server-side Swift web framework.
