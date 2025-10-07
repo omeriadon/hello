@@ -14,6 +14,6 @@ func routes(_ app: Application) throws {
 		guard let int = req.parameters.get("x", as: Int.self) else {
 			throw Abort(.badRequest)
 		}
-		return "\(int) is a great number"
+		return "well the number \(int) is a great number"
 	}
 }
