@@ -7,8 +7,8 @@ let package = Package(
 		.macOS(.v12),
 	],
 	dependencies: [
-		.package(url: "https://github.com/vapor/vapor.git", .exact("3.3.3")),
-		.package(url: "https://github.com/apple/swift-nio.git", .upToNextMajor(from: "2.32.0")),
+        .package(url: "https://github.com/vapor/vapor.git", from: .init("4.0.0")!),
+        .package(url: "https://github.com/apple/swift-nio.git", .upToNextMajor(from: "2.32.0")),
 	],
 	targets: [
 		.executableTarget(
@@ -17,12 +17,12 @@ let package = Package(
 				.product(name: "Vapor", package: "vapor"),
 				.product(name: "NIOCore", package: "swift-nio"),
 				.product(name: "NIOPosix", package: "swift-nio"),
-			],
-			swiftSettings: swiftSettings
+			]
+//			swiftSettings: swiftSettings
 		),
 	]
 )
 
-var swiftSettings: [SwiftSetting] { [
-	.enableUpcomingFeature("ExistentialAny"),
-] }
+//var swiftSettings: [SwiftSetting] { [
+//	.enableUpcomingFeature("ExistentialAny"),
+//] }
